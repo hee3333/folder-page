@@ -71,7 +71,7 @@ export const PageList: QuartzComponent = ({
 
         return (
           <li class="section-li">
-            <div class="section"></div>
+            <div class="section">
               <div class="desc">
                 <h3>
                   <a
@@ -136,7 +136,7 @@ PageList.css = `
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
-}`;
+}`
 
 li.section-li {
   margin: 0;
@@ -197,4 +197,4 @@ li.section-li > .section {
   gap: 0.4rem;
   padding: 0;
   list-style: none;
-}
+};
