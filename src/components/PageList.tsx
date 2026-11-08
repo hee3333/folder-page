@@ -72,14 +72,7 @@ export const PageList: QuartzComponent = ({
         return (
           <li class="section-li">
             <div class="section">
-              <p class="meta">
-                {page.dates && getDate(page) && (
-                  <DateDisplay
-                    date={getDate(page)!}
-                    locale={(cfg as { locale?: string } | undefined)?.locale ?? "en-US"}
-                  />
-                )}
-              </p>
+        
               <div class="desc">
                 <h3>
                   <a
@@ -92,6 +85,14 @@ export const PageList: QuartzComponent = ({
                 {typeof page.description === "string" && (
   <p class="page-preview">{page.description}</p>
 )}
+                <p class="meta">
+                {page.dates && getDate(page) && (
+                  <DateDisplay
+                    date={getDate(page)!}
+                    locale={(cfg as { locale?: string } | undefined)?.locale ?? "en-US"}
+                  />
+                )}
+              </p>
               </div>
               <ul class="tags">
                 {tags.map((tag) => (
@@ -134,3 +135,49 @@ PageList.css = `
   -webkit-box-orient: vertical;
   overflow: hidden;
 }`;
+
+li.section-li {
+  margin: 0;
+  padding: 1.25rem 0;
+  border-bottom: 1px solid var(--lightgray);
+}
+
+li.section-li > .section {
+  display: block;
+}
+
+.section h3 {
+  margin: 0;
+  font-size: 1.4rem;
+  font-weight: 400;
+}
+
+.section h3 a {
+  color: var(--secondary);
+  text-decoration: none;
+}
+
+.section h3 a:hover {
+  text-decoration: underline;
+}
+
+.section .page-preview {
+  margin: 0.5rem 0 0.75rem;
+  color: var(--darkgray);
+  line-height: 1.6;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.section .meta {
+  margin: 0;
+  color: var(--gray);
+  font-size: 0.85rem;
+  opacity: 1;
+}
+
+.section > .tags {
+  display: none;
+}
