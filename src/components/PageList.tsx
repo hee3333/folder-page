@@ -71,8 +71,7 @@ export const PageList: QuartzComponent = ({
 
         return (
           <li class="section-li">
-            <div class="section">
-        
+            <div class="section"></div>
               <div class="desc">
                 <h3>
                   <a
@@ -83,8 +82,9 @@ export const PageList: QuartzComponent = ({
                   </a>
                 </h3>
                 {typeof page.description === "string" && (
-  <p class="page-preview">{page.description}</p>
-)}
+                  <p class="page-preview">{page.description}</p>
+                )}
+              <div class="page-meta-row">
                 <p class="meta">
                 {page.dates && getDate(page) && (
                   <DateDisplay
@@ -93,7 +93,7 @@ export const PageList: QuartzComponent = ({
                   />
                 )}
               </p>
-              </div>
+            
               <ul class="tags">
                 {tags.map((tag) => (
                   <li>
@@ -110,6 +110,8 @@ export const PageList: QuartzComponent = ({
                 ))}
               </ul>
             </div>
+          </div>
+        </div>
           </li>
         );
       })}
@@ -178,14 +180,21 @@ li.section-li > .section {
   opacity: 1;
 }
 
-.section > .tags {
-  display: none;
-}
-
 li.section-li > .section {
   display: block !important;
 }
 
-.section > .tags {
-  display: none !important;
+.section .page-meta-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 0.75rem;
+}
+
+.section .tags {
+  display: flex;
+  gap: 0.4rem;
+  padding: 0;
+  list-style: none;
 }
