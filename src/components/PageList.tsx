@@ -181,3 +181,11 @@ li.section-li > .section {
 .section > .tags {
   display: none;
 }
+
+li.section-li > .section {
+  display: block !important;
+}
+
+.section > .tags {
+  display: none !important;
+}
