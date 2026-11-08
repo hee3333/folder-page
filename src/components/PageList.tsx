@@ -89,6 +89,9 @@ export const PageList: QuartzComponent = ({
                     {title}
                   </a>
                 </h3>
+                {typeof page.description === "string" && (
+  <p class="page-preview">{page.description}</p>
+)}
               </div>
               <ul class="tags">
                 {tags.map((tag) => (
@@ -121,4 +124,13 @@ PageList.css = `
 .section > .tags {
   margin: 0;
 }
-`;
+.section .page-preview {
+  margin: 0.4rem 0 0;
+  color: var(--gray);
+  font-size: 0.9rem;
+  line-height: 1.5;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}`;
