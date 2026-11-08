@@ -192,6 +192,19 @@ li.section-li > .section {
   margin-top: 0.75rem;
 }
 
+.section .page-meta-row ul.tags a.internal.tag-link {
+  color: #248c65 !important;
+  background: #eaf2ee !important;
+  border-radius: 999px;
+  padding: 0.2rem 0.45rem;
+  text-decoration: none;
+}
+
+.section .page-meta-row ul.tags a.internal.tag-link:hover {
+  color: #176546 !important;
+  background: #dcebe3 !important;
+}
+
 .section .tags {
   display: flex;
   gap: 0.4rem;
