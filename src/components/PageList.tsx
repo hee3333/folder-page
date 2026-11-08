@@ -63,9 +63,15 @@ export const PageList: QuartzComponent = ({
 
   const fileSlug = (fileData as { slug?: string } | undefined)?.slug as FullSlug | undefined;
 
+  const sortedList = [...list].sort((a, b) => {
+     const dateA = getDate(a)?.getTime() ?? 0
+     const dateB = getDate(b)?.getTime() ?? 0
+     return dateB - dateA
+  })
+
   return (
     <ul class="section-ul">
-      {list.map((page) => {
+      {sortedList.map((page) => {
         const title = page.frontmatter?.title;
         const tags = (page.frontmatter?.tags ?? []) as string[];
 
